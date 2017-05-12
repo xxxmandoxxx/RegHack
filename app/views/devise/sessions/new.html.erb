@@ -1,0 +1,24 @@
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+  <div>
+    <div>
+      <h1 class="logo-name">PT</i></g></h1>
+    </div>
+    <h3>RegHack</h3>
+    <p>
+      Blurb to add
+    </p>
+    <p>Login in. To see it in action.</p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form', class: 'm-t' }) do |f| %>
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Username" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: 'Password' %>
+        </div>
+        <%= f.submit  t('.sign_in', default: 'Login'), class: 'btn btn-primary block full-width m-b' %>
+        <%= render 'devise/shared/links' %>
+    <% end %>
+    <p class="m-t"> <small>Developed by Awesome People</small> </p>
+  </div>
+</div>
+
