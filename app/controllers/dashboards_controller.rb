@@ -10,7 +10,10 @@ class DashboardsController < ApplicationController
   end
 
   def dashboard_4
-    render :layout => "layout_2"
+    if current_user.project_id
+      @project = Project.find(current_user.project_id)
+    end
+
   end
 
   def dashboard_4_1

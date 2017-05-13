@@ -3,13 +3,10 @@
         <h2>Wizard</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="<%= url_for :controller => 'dashboards', :action => 'dashboard_1' %>">Home</a>
-        </li>
-        <li>
-            <a>Forms</a>
+                <a href="<%= url_for :controller => 'dashboards', :action => 'dashboard_4' %>">Home</a>
         </li>
         <li class="active">
-            <strong>Wizard</strong>
+            <strong>Agreement Engine</strong>
         </li>
     </ol>
 </div>
@@ -19,84 +16,10 @@
         </div>
 <div class="wrapper wrapper-content animated fadeInRight">
 <div class="row">
-    <div class="col-lg-5">
-        <div class="jumbotron">
-            <h1>Steps</h1>
-            <p>Smart UI component which allows you to easily create wizard-like interfaces.</p>
-            <p>
-                <a href="http://www.jquery-steps.com/GettingStarted" target="_blank" class="btn btn-primary btn-lg" role="button">Learn more about jQuery Steps</a>
-            </p>
-        </div>
-    </div>
-    <div class="col-lg-7">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Basic Wizzard</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#">Config option 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <p>
-                    This is basic example of Step
-                </p>
-                <div id="wizard">
-                    <h1>First Step</h1>
-                    <div class="step-content">
-                        <div class="text-center m-t-md">
-                            <h2>Hello in Step 1</h2>
-                            <p>
-                                This is the first content.
-                            </p>
-                        </div>
-                    </div>
-
-                    <h1>Second Step</h1>
-                    <div class="step-content">
-                        <div class="text-center m-t-md">
-                            <h2>This is step 2</h2>
-                            <p>
-                                This content is diferent than the first one.
-                            </p>
-                        </div>
-                    </div>
-
-                    <h1>Third Step</h1>
-                    <div class="step-content">
-                        <div class="text-center m-t-md">
-                            <h2>This is step 3</h2>
-                            <p>
-                                This is last content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
     <div class="col-lg-12">
         <div class="ibox">
             <div class="ibox-title">
-                <h5>Wizard with Validation</h5>
+                <h5>Agreement Engine Wizard</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -119,80 +42,126 @@
             </div>
             <div class="ibox-content">
                 <h2>
-                    Validation Wizard Form
+                    Generate Power Purchase Agreement
                 </h2>
                 <p>
-                    This example show how to use Steps with jQuery Validation plugin.
+                    Please fill out the form to generate PPA
                 </p>
 
-                <form id="form" action="#" class="wizard-big">
-                    <h1>Account</h1>
+                <form id="form" action="<%= pages_invoice_path %>" class="wizard-big">
+                    <h1>Parties</h1>
                     <fieldset>
-                        <h2>Account Information</h2>
+
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-8 col-lg-offset-2">
+                              <h2>Parties</h2>
                                 <div class="form-group">
-                                    <label>Username *</label>
-                                    <input id="userName" name="userName" type="text" class="form-control required">
+                                    <label>How many parties are signing up? </label>
+                                    <input id="userName" name="numberHouse" type="text" class="form-control " value="5">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password *</label>
-                                    <input id="password" name="password" type="text" class="form-control required">
+                                    <label>Where are you located?</label>
+                                    <input id="password" name="location" type="text" class="form-control " value="2/305 Cumberland Road, Pascoe Vale, 3044 VIC">
                                 </div>
                                 <div class="form-group">
-                                    <label>Confirm Password *</label>
-                                    <input id="confirm" name="confirm" type="text" class="form-control required">
+                                    <label>Are you an owner-occupier? </label>
+                                    <input id="confirm" name="owner" type="text" class="form-control " value="Yes">
                                 </div>
+                              <div class="form-group">
+                                <label>Have you already purchased solar panels? </label>
+                                <input id="confirm" name="panels" type="text" class="form-control " value="No">
+                              </div>
+                              <div class="form-group">
+                                <label>For each party, please provide their name and address </label>
+                                <input id="confirm" name="owner" type="textarea" class="form-control " value="Anakin Skeywalker">
+                              </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="text-center">
-                                    <div style="margin-top: 20px">
-                                        <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
                     </fieldset>
-                    <h1>Profile</h1>
+                    <h1>Details</h1>
                     <fieldset>
-                        <h2>Profile Information</h2>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-8 col-lg-offset-2">
+                              <h2>Details</h2>
                                 <div class="form-group">
-                                    <label>First name *</label>
-                                    <input id="name" name="name" type="text" class="form-control required">
+                                    <label>Which property will the solar panels be installed on your property?</label>
+                                    <input id="name" name="property" type="text" class="form-control " value="Yes">
                                 </div>
                                 <div class="form-group">
-                                    <label>Last name *</label>
-                                    <input id="surname" name="surname" type="text" class="form-control required">
+                                    <label>How will you manage excess energy ie, sell to public grid or store for consumption in the next month</label>
+                                    <input id="surname" name="excess" type="text" class="form-control " value="Sell to the public grid at a time and price agreed on by all homes using the energy sharing system.">
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
+
                                 <div class="form-group">
-                                    <label>Email *</label>
-                                    <input id="email" name="email" type="text" class="form-control required email">
+                                    <label>Will you be leasing the solar panel or purchasing it?</label>
+                                    <input id="email" name="leasing" type="text" class="form-control" value="Purchased">
                                 </div>
                                 <div class="form-group">
-                                    <label>Address *</label>
-                                    <input id="address" name="address" type="text" class="form-control">
+                                    <label>If purchased, how will parties share ownership of the solar panel?</label>
+                                    <input id="address" name="address" type="text" class="form-control" value="We will each own equal shares of the solar panel.">
                                 </div>
+                              <h2>Exit mechanisms</h2>
+                                <div class="form-group">
+                                  <label>What would you like to occur if someone sells their home or moves away?</label>
+                                  <input id="address" name="address" type="text" class="form-control" value="Each person will contribute $10,000.00">
+                                </div>
+                              <h2>Dispute resolution mechanism</h2>
+                              <div class="form-group">
+                                <label>How do you wish to resolve a dispute about an energy bill or purchase of solar panels? </label>
+                                <input id="address" name="address" type="text" class="form-control">
+                              </div>
                             </div>
                         </div>
                     </fieldset>
 
-                    <h1>Warning</h1>
-                    <fieldset>
-                        <div class="text-center" style="margin-top: 120px">
-                            <h2>You did it Man :-)</h2>
+                  <h1>Regulatory Questions</h1>
+                  <fieldset>
+
+                    <div class="row">
+                      <div class="col-lg-8 col-lg-offset-2">
+                        <h2>Regulatory</h2>
+                        <div class="form-group">
+                          <label>Do you want to set up as a retailer or use our retailer? </label>
+                          <input id="userName" name="numberHouse" type="text" class="form-control " value="Set up as a retailer">
+                          <div class="bg-warning">Use our questionnaire to determine if you qualify for a retailer licence</div>
                         </div>
-                    </fieldset>
+                        <div class="form-group">
+                          <label>What price will you sell your excess energy?</label>
+                          <input id="password" name="location" type="text" class="form-control " value="12 cents">
+                          <div class="bg-warning">Pricing is regulated, use our pricing calculator </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Do you plan on sourcing your energy needs from more than one retailer? </label>
+                          <input id="confirm" name="owner" type="text" class="form-control " value="Yes">
+                          <div class="bg-warning">You can only be supplied by one retailer</div>
+                        </div>
+                        <div class="form-group">
+                          <label>Will all day to day decisions about the micro-grid be made by unit members? </label>
+                          <input id="confirm" name="panels" type="text" class="form-control " value="No">
+                          <div class="bg-warning">If only one of the members, or a third party, manages the micro-grid on a day to day basis there is a possibility that the micro-grid is considered as a Managed Investment Scheme and you may have additional regulatory requirements. Please contact us to discuss this further. </div>
+                        </div>
+                        <div class="form-group">
+                          <label>What is the rates nameplate output? </label>
+                          <input id="confirm" name="owner" type="textarea" class="form-control " value="Over 100 kWh">
+                          <div class="bg-warning">
+                            A Generation Licence is required with a rated nameplate output of more than 100 kVa in South Australia.
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </fieldset>
 
                     <h1>Finish</h1>
                     <fieldset>
+                      <div class="col-lg-8 col-lg-offset-2">
                         <h2>Terms and Conditions</h2>
                         <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I agree with the Terms and Conditions.</label>
+                      </div>
                     </fieldset>
+
                 </form>
             </div>
         </div>
